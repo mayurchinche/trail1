@@ -11,8 +11,23 @@ import Welcome from './Components/welcome';
 import Message from './Components/message';
 import Counter from './Components/counter';
 import FunctionClick from './Components/functionClick';
+import { db } from './FirebaseConn';
+import firebase from 'firebase';
+
+const addTodo = (event) =>{
+  //This will fire off when we click the button
+  db.collection('todos').add({
+    todo: 'Mayur',
+    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+  })
+ 
+  // setTodos([...todos,input])
+  console.log('It works')
+  
+}
 function App() {
   const [value, onChange] = useState(new Date());
+  
   return (
     <div className="App">
       <Calendar 
@@ -21,7 +36,7 @@ function App() {
         value={value}
       />
       <Greet name='Mayur' heroname='is hero'>
-        <button>This is a children</button>
+        <button onClick={addTodo}>This is a children</button>
       </Greet>
       <Welcome name='Dear !.'/>
      <Message/>

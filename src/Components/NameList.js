@@ -1,6 +1,12 @@
 import Person from './Person'
 import React from 'react'
+import './stylesheet.css'
 
+
+const heading = {
+  fontSize: '80px',
+  color: 'green'
+}
 function NameList() {
     const persons =[
         {
@@ -16,7 +22,7 @@ function NameList() {
     ]
     const Namelist= persons.map(person => <Person key={person.name} person={person}/>)
     return (
-        <div>
+        <div style={heading}>
             {
                Namelist
             }            

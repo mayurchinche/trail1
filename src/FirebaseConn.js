@@ -1,7 +1,8 @@
 
-import firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/firestore"
 
-const firebaseApp = firebase.initializeApp(
+const FirebaseConn = firebase.initializeApp(
     {
         apiKey: "AIzaSyDlYt-hon1cNQUYVGfYqrZuP_PSpCz4cbY",
         authDomain: "todo-app-ae2f2.firebaseapp.com",
@@ -14,6 +15,6 @@ const firebaseApp = firebase.initializeApp(
 
     }
 );
-const db= firebaseApp.firestore();
+const db= FirebaseConn.firestore();
 
-export{db};
+export {db}
