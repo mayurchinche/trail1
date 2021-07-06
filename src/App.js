@@ -14,6 +14,21 @@ import FunctionClick from './Components/functionClick';
 import { db } from './FirebaseConn';
 import firebase from 'firebase';
 
+import { makeStyles,CssBaseline,AppBar} from '@material-ui/core';
+import Header from './Components/Header';
+
+
+const useStyles=makeStyles((theme)=>({
+
+  root :{
+    minHeight :'100vh',
+    backgroundImage: `url(${process.env.PUBLIC_URL + "/Assets/1.jpg"})`, 
+    backgroundRepeat:"no-repeat",
+    backgroundSize :'cover'
+  }
+
+}));
+
 const addTodo = (event) =>{
   //This will fire off when we click the button
   db.collection('todos').add({
@@ -27,10 +42,16 @@ const addTodo = (event) =>{
 }
 function App() {
   const [value, onChange] = useState(new Date());
-  
+  const classes=useStyles();
   return (
+    
+
+        
     <div className="App">
-      <Calendar 
+      <div className={classes.root}>
+        <CssBaseline/>
+         <Header/>
+         <Calendar 
         onClickDay={console.log({value})}
         onChange={onChange} 
         value={value}
@@ -47,6 +68,9 @@ function App() {
     <ConditionalRendering/>
     <NameList/>
       </div>
+
+      </div>
+ 
 );
 
 }
