@@ -3,7 +3,12 @@ import SortIcon from '@material-ui/icons/Sort';
 import React from 'react'
 
 const useStyles=makeStyles((theme)=>({
-
+root:{
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    height:'100vh'
+},
  appbar :{
      background :"none",
      fontFamily: 'Nunito',
@@ -32,18 +37,21 @@ const useStyles=makeStyles((theme)=>({
 function Header() {
     const classes=useStyles();
     return (
-        <div>
+        <div className={classes.root}>
            <AppBar className ={classes.appbar} elevation={0}>
              <Toolbar className ={classes.appbarWrapper}>
                 <h1 className ={classes.appbarTitle}>MyProfile</h1> 
                <IconButton>
                     <SortIcon className={classes.icon}/>
                </IconButton>
-             </Toolbar>
-                
-              
+             </Toolbar>   
             </AppBar> 
+            <div className={classes.container}>
+                <h1>Welcome To<br/> <span>My Profile</span></h1>
+
+            </div>
         </div>
+        
     )
 }
 

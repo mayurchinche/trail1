@@ -14,7 +14,7 @@ import FunctionClick from './Components/functionClick';
 import { db } from './FirebaseConn';
 import firebase from 'firebase';
 
-import { makeStyles,CssBaseline,AppBar} from '@material-ui/core';
+import { makeStyles,CssBaseline} from '@material-ui/core';
 import Header from './Components/Header';
 
 
