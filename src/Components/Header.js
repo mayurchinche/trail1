@@ -13,7 +13,8 @@ root:{
  appbar :{
      background :"none",
      fontFamily: 'Nunito',
-     color:'#FFA500'
+     color:'#FFA500',
+     
 
  },
  appbarWrapper :{
@@ -61,7 +62,8 @@ function Header() {
     },[]  )
     return (
         <div className={classes.root}>
-           <AppBar className ={classes.appbar} elevation={0}>
+        
+           <AppBar  id='appbar' className ={classes.appbar} elevation={0}>
              <Toolbar className ={classes.appbarWrapper}>
                 <h1 className ={classes.appbarTitle}>MyProfile</h1> 
                <IconButton>

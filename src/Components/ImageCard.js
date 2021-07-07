@@ -7,11 +7,12 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles({
   root: {
       
-    maxWidth: 645,
+    maxWidth: 700,
     background:"rgba(0,0,0,0.5)",
     margin:"20px"
   }, 
@@ -35,33 +36,44 @@ export default function ImageCard({place}) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          component="img"
-          alt="Contemplative Reptile"
-          height="140"
-          image={place.imageUrl}
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h1" className={classes.title}>
-            {place.title}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p" className={classes.desc}>
-            {place.description}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
-    </Card>
+    <Grid
+    container
+    spacing={8}
+    direction="column"
+    alignItems="center"
+    justify="center"
+   
+   >
+    <Grid item xs={6}>
+        <Card className={classes.root} >
+        <CardActionArea>
+            <CardMedia
+            className={classes.media }
+            component="img"
+            alt="Contemplative Reptile"
+            height="140"
+            image={place.imageUrl}
+            title="Contemplative Reptile"
+            />
+            <CardContent>
+            <Typography gutterBottom variant="h5" component="h1" className={classes.title}>
+                {place.title}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p" className={classes.desc}>
+                {place.description}
+            </Typography>
+            </CardContent>
+        </CardActionArea>
+        <CardActions>
+            <Button size="small" color="primary">
+            Share
+            </Button>
+            <Button size="small" color="primary">
+            Learn More
+            </Button>
+        </CardActions>
+        </Card>
+    </Grid>      
+    </Grid>
   );
 }

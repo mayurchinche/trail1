@@ -8,11 +8,10 @@ const useStyles=makeStyles((theme)=>({
 root :{
 
     minheight:'100vh',
-    alignContent:'center',
+    //display:'flex',
     justifyContent :'center',
-    alignItems:'center',
-    
-    [theme.breakpoints.down("md")]:{
+    alignContent:'center' ,
+    [theme.breakpoints.down()]:{
         flexDirection:'column',
     }
 
