@@ -16,6 +16,7 @@ import firebase from 'firebase';
 
 import { makeStyles,CssBaseline} from '@material-ui/core';
 import Header from './Components/Header';
+import PlaceToVisit from './Components/PlaceToVisit';
 
 
 const useStyles=makeStyles((theme)=>({
@@ -51,6 +52,7 @@ function App() {
       <div className={classes.root}>
         <CssBaseline/>
          <Header/>
+         <PlaceToVisit/>
          <Calendar 
         onClickDay={console.log({value})}
         onChange={onChange} 

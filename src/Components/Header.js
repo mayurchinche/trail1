@@ -44,7 +44,13 @@ root:{
     color:'Green',
     fontSize:'5rem'}
 }));
-
+function handleScroll() {
+    window.scroll({
+      top: document.body.offsetHeight * 0.27,
+      left: 0, 
+      behavior: 'smooth',
+    });
+  }
 function Header() {
 
     const classes=useStyles();
@@ -69,7 +75,7 @@ function Header() {
             collapsedHeight={50}>
             <div className={classes.container}>
                 <h1 className={classes.title}>Welcome To<br/> <span>My Profile</span></h1>
-                <IconButton >
+                <IconButton onClick={handleScroll} >
                     <ExpandMore  className={classes.goDown}/>
                 </IconButton>
             </div> 
